@@ -1,13 +1,13 @@
 const urlTopic = 'api/topic';
 const urlSubchapter = 'api/subchapter';
 
-let subchapters = [];
+let subchapters = new Map()
 let topics = [];
 
 function getSubchapters() {
 	fetch(urlSubchapter)
 		.then(response => response.json())
-		.then(data => _displaySubchapters(data)) // falta _displaySubchapers
+		.then(data => _displaySubchapters(data))
 		.catch(error => console.error('Unable to get subchapters.', error));
 }
 
@@ -54,15 +54,21 @@ function deleteTopic(id) {
 
 function displayEditForm(id) {
 	const item = topics.find(item => item.id === id);
-	document.getElementById('edit-name').value = item.text;
+
 	document.getElementById('edit-id').value = item.id;
+	const sBody = document.getElementById('add-subchapter');
+	document.getElementById('edit-subchapter').innerHTML = sBody.innerHTML;
+	document.getElementById('edit-subchapter').value = item.subchapter;
+	document.getElementById('edit-text').value = item.text;
 	document.getElementById('editForm').style.display = 'block';
 }
 
 function updateTopic() {
 	const itemId = document.getElementById('edit-id').value;
+	const itemSubchapter = document.getElementById('edit-subchapter').value;
 	const item = {
 		id: parseInt(itemId, 10),
+		subchapter: parseInt(itemSubchapter, 10),
 		text: document.getElementById('edit-text').value.trim()
 	};
 
@@ -95,15 +101,16 @@ function _displayCount(itemCount) {
 function _displaySubchapters(data) {
 	const sBody = document.getElementById('add-subchapter');
 	sBody.innerHTML = '';
+	subchapters.clear();
 
 	data.forEach(item => {
 		let option = document.createElement("option");
 		option.text = item.text;
 		option.value = item.id;
 		sBody.add(option);
+
+		subchapters.set(item.id, item)
 	});
-	
-	subchapters = data;
 }
 
 function _displayTopics(data) {
@@ -118,7 +125,7 @@ function _displayTopics(data) {
 		let tr = tBody.insertRow();
 
 		let td1 = tr.insertCell(0);
-		let subchapterNode = document.createTextNode(item.subchapter);
+		let subchapterNode = document.createTextNode(subchapters.get(item.subchapter).text);
 		td1.appendChild(subchapterNode);
 
 		let td2 = tr.insertCell(1);

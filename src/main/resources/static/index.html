@@ -5,7 +5,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Entrevista laboral activos</title>
+	<title>Entrevista laboral Activos S.A.S</title>
 	<link rel="stylesheet" href="css/site.css" />
 </head>
 
@@ -21,22 +21,24 @@
 		<input type="submit" value="Add">
 	</form>
 
-    <div id="editForm">
-        <h3>Edit</h3>
-        <form action="javascript:void(0);" onsubmit="updateTopic()">
-            <input type="hidden" id="edit-id">
-            <input type="text" id="edit-text">
-            <input type="submit" value="Save">
-            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
-        </form>
-    </div>
+	<div id="editForm">
+		<h3>Edit</h3>
+		<form action="javascript:void(0);" onsubmit="updateTopic()">
+			<input type="hidden" id="edit-id">
+			<select id="edit-subchapter">
+			</select>
+			<input type="text" id="edit-text">
+			<input type="submit" value="Save">
+			<a onclick="closeInput()" aria-label="Close">&#10006;</a>
+		</form>
+	</div>
 
 	<h3>Read, Update and Delete</h3>
 	<p id="counter"></p>
 	<table>
 		<tr>
 			<th>Suchapter</th>
-			<th>Name</th>
+			<th>Topic</th>
 			<th></th>
 			<th></th>
 		</tr>

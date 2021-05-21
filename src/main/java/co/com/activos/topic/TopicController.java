@@ -40,8 +40,7 @@ public class TopicController {
 	public Topic update(@RequestBody Topic topic, @PathVariable Long id) {
 		Topic actual = topicService.findById(id);
 
-		// No me alcanzo el tiempo para editar el subchapter
-		// actual.setSubchapter(topic.getSubchapter());
+		actual.setSubchapter(topic.getSubchapter());
 		actual.setText(topic.getText());
 
 		return topicService.save(actual);
