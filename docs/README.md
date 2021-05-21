@@ -1,4 +1,4 @@
-# Entrevista labolar para Activos S.A.S de Juan Manuel González Garzón.
+# Entrevista laboral para Activos S.A.S. de Juan Manuel González Garzón.
 
 Este proyecto cumple la siguiente especificación:
 
@@ -10,7 +10,7 @@ CRUD a la base de datos.				| En la aplicación, en los archivos Topic.java, ITo
 Creación de un procedimiento almacenado	| En el archivo create-database.sql **(Sin realizar)**
 Creación de una función					| En el archivo create-database.sql **(Sin realizar)**
 Listas desplegables.					| En la aplicación, cliente web	visible en la URL: http://localhost:8080/index.html
-Mensajes de alerta.						| En la aplicación, cliente web	visible en la URL: http://localhost:8080/index.html **(Sin realizar)**
+Mensajes de alerta.						| En la aplicación, cliente web	visible en la URL: http://localhost:8080/index.html
 Manejo de errores.						| En la aplicación **(Sin realizar)**
 Documentación de la aplicación.			| Usando el jar: spring-restdocs-core-2.0.5.RELEASE.jar **(Sin realizar)**
 
