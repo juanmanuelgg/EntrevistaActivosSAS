@@ -25,7 +25,7 @@ limitations under the License.
 </head>
 
 <body>
-	<h1>Topic CRUD</h1>
+	<h1>Topic (CRUD)</h1>
 
 	<h3>Create</h3>
 	<form action="javascript:void(0);" method="POST" onsubmit="addTopic()">
@@ -36,6 +36,7 @@ limitations under the License.
 		<input type="submit" value="Add">
 	</form>
 
+	<h3>Read, Update and Delete</h3>
 	<div id="editForm">
 		<h3>Edit</h3>
 		<form action="javascript:void(0);" onsubmit="updateTopic()">
@@ -47,8 +48,7 @@ limitations under the License.
 			<a onclick="closeInput()" aria-label="Close">&#10006;</a>
 		</form>
 	</div>
-
-	<h3>Read, Update and Delete</h3>
+	
 	<p id="counter"></p>
 	<table>
 		<tr>

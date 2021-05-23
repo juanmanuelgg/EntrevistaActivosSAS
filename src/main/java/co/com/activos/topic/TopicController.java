@@ -47,6 +47,7 @@ public class TopicController {
 	}
 
 	@PostMapping("")
+	@ResponseStatus(HttpStatus.CREATED)
 	public Topic create(@RequestBody Topic topic) {
 		return topicService.save(topic);
 	}

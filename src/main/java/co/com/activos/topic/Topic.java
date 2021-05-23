@@ -30,6 +30,14 @@ public class Topic {
 	private long subchapter;
 	private String text;
 
+	public Topic() {
+	}
+
+	public Topic(Topic topic) {
+		this.subchapter = topic.getSubchapter();
+		this.text = topic.getText();
+	}
+
 	public long getId() {
 		return id;
 	}

@@ -56,10 +56,7 @@ function addTopic() {
 			addTextTextbox.value = '';
 		})
 		.then(() => alertify.success('Topic added successfully!'))
-		.catch(error => {
-			alertify.notify('Unable to add topic.');
-			//console.error('Unable to add topic.', error);
-		});
+		.catch(() => alertify.notify('Unable to add topic.'));
 		
 }
 
@@ -70,10 +67,7 @@ function deleteTopic(id) {
 	})
 		.then(() => getTopics())
 		.then(() => alertify.success('Topic deleted successfully!'))
-		.catch(error => {
-			alertify.notify('Unable to delete topic.');
-			//console.error('Unable to delete topic.', error);
-		});
+		.catch(() => alertify.notify('Unable to delete topic.'));
 }
 
 function displayEditForm(id) {
@@ -106,10 +100,7 @@ function updateTopic() {
 	})
 		.then(() => getTopics())
 		.then(() => alertify.success('Topic updated successfully!'))
-		.catch(error => {
-			alertify.notify('Unable to update topic.');
-			//console.error('Unable to update topic.', error);
-		});
+		.catch(() => alertify.notify('Unable to update topic.'));
 
 	closeInput();
 
